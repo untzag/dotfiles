@@ -14,7 +14,7 @@
      games
      git
      helm
-     markdown
+     mark down
      org
      python
      ranger
@@ -56,8 +56,8 @@
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("DejaVu Sans Mono"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -124,7 +124,10 @@
   )
 
 (defun dotspacemacs/user-config ()
-  (setq powerline-default-separator 'bar)
+  (setq-default dotspacemacs-configuration-layers '(pdf-tools
+                                                    ))
+  (setq powerline-default-separator nil)
+  (setq org-ellipsis " ⟶")
   (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
         org-ref-pdf-directory "~/drive/literature/"
         org-ref-bibliography-notes "~/drive/literature/literature.org")
