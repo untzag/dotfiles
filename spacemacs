@@ -124,13 +124,19 @@
   )
 
 (defun dotspacemacs/user-config ()
-  (setq-default dotspacemacs-configuration-layers '(pdf-tools
-                                                    ))
+  (setq-default dotspacemacs-configuration-layers '(pdf-tools))
   (setq powerline-default-separator nil)
-  (setq org-ellipsis " ⟶")
   (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
-        org-ref-pdf-directory "~/drive/literature/"
-        org-ref-bibliography-notes "~/drive/literature/literature.org")
+        org-ref-pdf-directory '("~/drive/literature/")
+        org-ref-bibliography-notes '("~/drive/literature/literature.org")
+        org-ellipsis " ⟶"
+        org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
+        org-todo-keyword-faces '(("IDEA" . (:foreground "#2aa198", :weight bold))
+                                 ("TODO" . (:foreground "#dc322f", :weight bold))
+                                 ("WAITING" . (:foreground "#b58900", :weight bold))
+                                 ("DONE" . (:foreground "#859900", :weight bold))
+                                 ("DELEGATED" . (:foreground "#859900", :weight bold))
+                                 ("CANCELED" . (:foreground "#268bd2", :weight bold))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
