@@ -127,8 +127,8 @@
   (setq-default dotspacemacs-configuration-layers '(pdf-tools))
   (setq powerline-default-separator nil)
   (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
-        org-ref-pdf-directory '("~/drive/literature/")
-        org-ref-bibliography-notes '("~/drive/literature/literature.org")
+        org-ref-pdf-directory '"~/drive/literature/"
+        org-ref-bibliography-notes '"~/drive/literature/literature.org"
         org-ellipsis " ⟶"
         org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
         org-todo-keyword-faces '(("IDEA" . (:foreground "#2aa198", :weight bold))
