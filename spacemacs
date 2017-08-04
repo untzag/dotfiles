@@ -14,8 +14,9 @@
      games
      git
      helm
-     mark down
+     markdown
      org
+     pdf-tools
      python
      ranger
      shell
@@ -124,6 +125,8 @@
   )
 
 (defun dotspacemacs/user-config ()
+  (with-eval-after-load 'org (setq org-agenda-files
+                                   '("~/drive/org/")))
   (setq-default dotspacemacs-configuration-layers '(pdf-tools))
   (setq powerline-default-separator nil)
   (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
