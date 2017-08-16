@@ -7,7 +7,8 @@
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(auto-completion
+   '(
+     yamlauto-completion
      better-defaults
      bibtex
      emacs-lisp
@@ -23,7 +24,7 @@
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'eshell)
+            shell-default-shell 'term)
      spell-checking
      syntax-checking
      version-control
