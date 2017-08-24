@@ -128,7 +128,8 @@
   (with-eval-after-load 'org (setq org-agenda-files
                                    '("~/drive/org/")))
   (setq-default dotspacemacs-configuration-layers '(pdf-tools))
-  (setq powerline-default-separator nil)
+  (setq powerline-default-separator nil
+        spaceline-org-clock-p t)
   (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
         org-ref-pdf-directory '"~/drive/literature/"
         org-ref-bibliography-notes '"~/drive/literature/literature.org"
