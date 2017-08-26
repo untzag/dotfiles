@@ -1,0 +1,5 @@
+[user]
+	email = blaise@untzag.com
+	name = Blaise Thompson
+[push]
+	default = simple
