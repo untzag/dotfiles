@@ -138,7 +138,7 @@
         org-ref-pdf-directory '"~/drive/literature/"
         org-ref-bibliography-notes '"~/drive/literature/literature.org"
         org-ellipsis " ⟶"
-        org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
+        org-todo-keywords '((sequence "TODO(t)" "IDEA(i)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
         org-todo-keyword-faces '(("IDEA" . (:foreground "#2aa198", :weight bold))
                                  ("TODO" . (:foreground "#dc322f", :weight bold))
                                  ("WAITING" . (:foreground "#b58900", :weight bold))
