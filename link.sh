@@ -10,7 +10,9 @@ cd $dir
 
 # move current files and link contained files
 files=$(ls $dir)
-for name in $files; do
+for f in $files; do
+    name=${f//+//}
+    echo $name
     mv ~/.$name ~/dotfiles_old/
-    ln -s $dir/$name ~/.$name
+    ln -s $dir/$f ~/.$name
 done

@@ -1,0 +1,9 @@
+host wright_fs
+   User John
+   HostName 128.104.68.238 
+   Port 22
+
+host wright_ps
+   User John
+   HostName 128.104.69.51
+   Port 22
