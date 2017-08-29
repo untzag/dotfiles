@@ -6,8 +6,7 @@
    dotspacemacs-enable-lazy-installation 'unused
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
-   dotspacemacs-configuration-layers
-   '(
+   dotspacemacs-configuration-layers '(
      yamlauto-completion
      better-defaults
      bibtex
@@ -30,7 +29,9 @@
      syntax-checking
      version-control
      )
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+     base16-theme
+     )
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only))
@@ -56,6 +57,7 @@
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(sanityinc-solarized-dark
                          sanityinc-solarized-light
+                         solarized-theme
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -123,7 +125,7 @@
    ))
 
 (defun dotspacemacs/user-init ()
-
+  (setq spacemacs-theme-org-height nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -152,7 +154,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(doc-view-continuous t))
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(doc-view-continuous t)
+ '(evil-want-Y-yank-to-eol nil)
+ '(spacemacs-theme-org-height nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
