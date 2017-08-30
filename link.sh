@@ -16,3 +16,7 @@ for f in $files; do
     mv ~/.$name ~/dotfiles_old/
     ln -s $dir/$f ~/.$name
 done
+
+# password-store
+ln -sf ~/dotfiles/password-store ~/.password-store
+
