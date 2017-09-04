@@ -20,3 +20,5 @@ done
 # password-store
 ln -sf ~/dotfiles/password-store ~/.password-store
 
+# i3
+ln -sf ~/dotfiles/i3 ~/.config/i3
