@@ -16,3 +16,7 @@
 *color13:    rgb:81/a2/be
 *color14:    rgb:b2/94/bb
 *color15:    rgb:a3/68/5a
+
+XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
+XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
+XTerm.vt100.faceSize: 10
