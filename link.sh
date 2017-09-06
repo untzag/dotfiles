@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # create dotfiles_old in homedir
 olddir=~/dotfiles_old
@@ -21,4 +21,6 @@ done
 ln -sf ~/dotfiles/password-store ~/.password-store
 
 # i3
-ln -sf ~/dotfiles/i3 ~/.config/i3
+ln -sf ~/dotfiles/i3/config ~/.config/i3/config
+mkdir ~/.config/i3status
+ln -sf ~/dotfiles/i3/i3status+config ~/.config/i3status/config

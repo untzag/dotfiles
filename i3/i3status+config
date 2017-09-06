@@ -1,0 +1,26 @@
+general {
+	colors = true
+	color_good = "#b5bd68"
+	color_bad = "#cc6666"
+	color_degraded = "#81a2be"
+	interval = 1
+}
+
+order += "volume master"
+order += "cpu_usage"
+order += "tztime local"
+
+volume master {
+	format = " ♪ %volume " 
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+cpu_usage {
+	format = " CPU %usage "
+}
+
+tztime local {
+	format = " %Y-%m-%d %H:%M:%S "
+}
