@@ -1,6 +1,15 @@
-*foreground: rgb:c5/c8/c6
-*background: rgb:1d/1f/21
-*color0:     rgb:1d/1f/21
+! define tomorrow night colorscheme
+#define tomorrow_background #1d1f21
+#define tomorrow_foreground #c5c8c6
+#define tomorrow_selection  #373b41
+#define tomorrow_comment    #969896
+#define tomorrow_red        #cc6666
+#define tomorrow_orange     #de935f
+#define tomorrow_yellow     #f0c674
+
+*foreground: tomorrow_foreground
+*background: tomorrow_background
+*color0:     tomorrow_background
 *color1:     rgb:cc/66/66
 *color2:     rgb:b5/bd/68
 *color3:     rgb:f0/c6/74
@@ -21,3 +30,7 @@ XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
 XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
 XTerm.vt100.faceSize: 10
 XTerm.selectToClipboard: true
+
+rofi.color-enabled: true
+rofi.color-window: tomorrow_selection, tomorrow_foreground, tomorrow_comment
+rofi.color-normal: tomorrow_selection, tomorrow_foreground, tomorrow_selection, tomorrow_selection, tomorrow_yellow

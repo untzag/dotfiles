@@ -25,7 +25,9 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#373b41' -sb '#373b41' -sf '#f0c67i4'"
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -hide-scrollbar -separator-style "solid"
+
+
 
 # i3lock
 bindsym $mod+l exec ~/.config/i3/lock.sh
@@ -138,28 +140,38 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# colors --- https://github.com/chriskempson/tomorrow-theme
+set $background #1d1f21
+set $current    #282a2e
+set $selection  #373b41
+set $foreground #c5c8c6
+set $comment    #969896
+set $red        #cc6666
+set $orange     #de935f
+set $yellow     #f0c674
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
         position top
         colors {
-               background #373b41
-               focused_workspace  #373b41 #373b41 #ffffff
-               inactive_workspace #373b41 #373b41 #888888
+               background $selection
+               focused_workspace  $selection $selection $yellow
+               inactive_workspace $selection $selection $foreground
         }
 }
 
-# colors --- https://github.com/chriskempson/tomorrow-theme
-# class                 border  backgr. text    indicator child_border
-client.focused          #282a2e #373b41 #ffffff #373b41   #373b41 
-client.focused_inactive #282a2e #282a2e #ffffff #292d2e   #282a2e
-client.unfocused        #282a2e #282a2e #888888 #292d2e   #282a2e
-client.urgent           #282a2e #900000 #ffffff #900000   #900000
-client.placeholder      #282a2e #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #373b41
+# class                 border      background  text        indicator child_border
+client.focused          $background $background $foreground $red      $selection 
+client.focused_inactive $background $background $foreground $red      $background
+client.unfocused        $background $background $comment    $red      $background
+client.urgent           $background $background $red        $red      $red
+client.placeholder      #282a2e     #0c0c0c     #ffffff     #000000   #0c0c0c
+client.background       $background
 
 gaps inner 10
 gaps outer 0
 smart_gaps on
 for_window [class="^.*"] border pixel 5
+hide_edge_borders both
