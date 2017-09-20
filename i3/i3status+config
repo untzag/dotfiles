@@ -8,6 +8,7 @@ general {
 
 order += "volume master"
 order += "cpu_usage"
+order += "battery 0"
 order += "tztime local"
 
 volume master {
@@ -20,6 +21,13 @@ volume master {
 cpu_usage {
 	format = " CPU %usage "
 }
+
+battery 0 {
+  format = " BAT %percentage "
+  format_down = " ⚡ "
+  path = "/sys/class/power_supply/BAT%d/uevent"
+}
+
 
 tztime local {
 	format = " %Y-%m-%d %H:%M:%S "
