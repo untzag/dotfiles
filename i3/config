@@ -27,8 +27,6 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#373b41' -sb '#373b41' -sf '#f0c67i4'"
 bindsym $mod+d exec rofi -show run -hide-scrollbar -separator-style "solid"
 
-
-
 # i3lock
 bindsym $mod+l exec ~/.config/i3/lock.sh
 exec xautolock -time 15 -locker '~/.config/i3/lock.sh'
