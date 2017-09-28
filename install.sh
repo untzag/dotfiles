@@ -1,3 +1,10 @@
+#function install{
+#  yaourt -S $1 --needed --noconfirm
+#  # clear temp
+#  /bin/rm -rf /tmp/* /tmp/.* &>/dev/null
+#}
+
+
 # utilities
 sudo pacman -S git --needed
 sudo pacman -S xterm --needed
@@ -18,6 +25,7 @@ yaourt -S i3lock-color-git --needed
 yaourt -S anaconda --needed --tmp ~/Desktop
 
 # applications
+yaourt -S texlive-most --needed --noconfirm
 sudo pacman -S emacs --needed
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 yaourt -S slack-desktop --needed
