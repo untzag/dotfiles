@@ -23,5 +23,6 @@ ln -sf ~/dotfiles/password-store ~/.password-store
 # i3
 ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 ln -sf ~/dotfiles/i3/lock.sh ~/.config/i3/lock.sh
+ln -sf ~/dotfiles/i3/toggle_mouse.sh ~/.config/i3/toggle_mouse.sh
 mkdir ~/.config/i3status
 ln -sf ~/dotfiles/i3/i3status+config ~/.config/i3status/config
