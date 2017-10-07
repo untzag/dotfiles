@@ -37,6 +37,7 @@ yaourt -S i3lock-color-git --needed
 yaourt -S anaconda --needed --tmp ~/Desktop
 
 # applications
+install qutebrowser
 install texlive-most
 install biber
 install emacs
