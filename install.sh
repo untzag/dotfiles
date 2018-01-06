@@ -26,6 +26,7 @@ install imagemagick
 install scrot
 install insync
 install ranger
+install aspell-en
 
 # i3
 yaourt -S i3-gaps --needed
