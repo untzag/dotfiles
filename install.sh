@@ -26,6 +26,8 @@ install imagemagick
 install scrot
 install insync
 install ranger
+install tree
+install aspell
 install aspell-en
 
 # i3

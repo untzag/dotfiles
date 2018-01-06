@@ -17,9 +17,6 @@ for f in $files; do
     ln -s $dir/$f ~/.$name
 done
 
-# password-store
-ln -sf ~/dotfiles/password-store ~/.password-store
-
 # i3
 ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 ln -sf ~/dotfiles/i3/lock.sh ~/.config/i3/lock.sh

@@ -195,3 +195,4 @@ hide_edge_borders both
 exec insync start
 
 exec xset s off -dpms 
+exec xset -b  # never beep
