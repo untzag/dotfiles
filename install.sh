@@ -29,6 +29,7 @@ install ranger
 install tree
 install aspell
 install aspell-en
+install htop
 
 # i3
 yaourt -S i3-gaps --needed
