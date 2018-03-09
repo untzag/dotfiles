@@ -196,3 +196,5 @@ exec insync start
 
 exec xset s off -dpms 
 exec xset -b  # never beep
+
+exec-always --no-startup-id dunst -config ~/.dunstrc

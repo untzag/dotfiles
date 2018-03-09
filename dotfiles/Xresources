@@ -9,8 +9,8 @@
 
 *foreground: tomorrow_foreground
 *background: tomorrow_background
-*color0:     tomorrow_background
-*color1:     rgb:cc/66/66
+*color0:     tomorrow_red
+*color1:     tomorrow_red
 *color2:     rgb:b5/bd/68
 *color3:     rgb:f0/c6/74
 *color4:     rgb:81/a2/be
