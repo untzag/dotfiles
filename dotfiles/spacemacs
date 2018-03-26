@@ -15,7 +15,7 @@
      git
      helm
      latex
-     (latex :variables latex-enable-folding nil)
+     (latex :variables latex-enable-folding t)
      markdown
      org
      pdf-tools
