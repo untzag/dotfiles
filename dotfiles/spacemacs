@@ -128,14 +128,16 @@
 
 (defun dotspacemacs/user-config ()
   (with-eval-after-load 'org (setq org-agenda-files
-                                   '("~/drive/org/")))
+                                   '("~/org/")))
   (setq-default dotspacemacs-configuration-layers '(pdf-tools))
   (setq-default fill-column 99)
+  (setq org-tags-column -99)
+  (setq org-agenda-window-setup 'current-window)
   (setq powerline-default-separator nil
         spaceline-org-clock-p t)
-  (setq org-ref-default-bibliography '("~/drive/literature/database.bib")
-        org-ref-pdf-directory '"~/drive/literature/"
-        org-ref-bibliography-notes '"~/drive/literature/literature.org"
+  (setq org-ref-default-bibliography '("~/literature/database.bib")
+        org-ref-pdf-directory '"~/literature/"
+        org-ref-bibliography-notes '"~/literature/literature.org"
         org-ellipsis " ⟶"
         org-todo-keywords '((sequence "TODO(t)" "IDEA(i)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
         org-todo-keyword-faces '(("IDEA" . (:foreground "#2aa198", :weight bold))
@@ -144,6 +146,11 @@
                                  ("DONE" . (:foreground "#859900", :weight bold))
                                  ("DELEGATED" . (:foreground "#859900", :weight bold))
                                  ("CANCELED" . (:foreground "#268bd2", :weight bold))))
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file "~/org/todo.org")
+           "* TODO %?\n  %i\n  %a")
+          ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
+           "* %?\nEntered on %U\n  %i\n  %a")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
