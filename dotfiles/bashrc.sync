@@ -17,7 +17,7 @@ function countdown(){
 }
 
 function git-commit-with-timestamp(){
-  print-cyan $(pwd)
+  print-green $(pwd)
   git remote update
   git pull
   if ! git diff --quiet
@@ -42,8 +42,15 @@ function print-cyan {
   printf "${CYAN}$*${NC}\n"
 }
 
+
+function print-green {
+  GREEN='\033[0;32m'
+  NC='\033[0m' # No Color
+  printf "${GREEN}$*${NC}\n"
+}
+
 function print-line {
-  print-cyan "%`tput cols`s"|tr ' ' '#'
+  print-green "%`tput cols`s"|tr ' ' '#'
 }
 
 function print-yellow {
