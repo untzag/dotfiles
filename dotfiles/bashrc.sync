@@ -5,17 +5,32 @@ export PATH="/opt/anaconda/bin:$PATH"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-function blaise() {
-  echo hello
-}
-
+# --- functions -----------------------------------------------------------------------------------
 
 function countdown(){
-   secs=$(($1 * 60));
-   date1=$((`date +%s` + "$secs")); 
-   while [ "$date1" -ge `date +%s` ]; do 
-     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
-     sleep 0.1
-   done
+  secs=$(($1 * 60));
+  date1=$((`date +%s` + "$secs")); 
+  while [ "$date1" -ge `date +%s` ]; do 
+    echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+    sleep 0.1
+  done
 }
 
+function git-commit-with-timestamp(){
+  echo " "
+  pwd
+  git remote update
+  git pull
+  if ! git diff --quiet
+  then 
+    echo "COMMITING"
+    git add --all
+    git commit -m "$(date +"%Y-%m-%d %H:%M")"
+    git push
+  fi
+}
+
+function git-sync-all(){
+  cd ~/org; git-commit-with-timestamp;
+  cd ~/dotfiles; git-commit-with-timestamp;
+}
