@@ -36,6 +36,13 @@ function git-sync-all(){
   cd ~/dotfiles; git-commit-with-timestamp;
 }
 
-function print-line {
-  printColor "%`tput cols`s"|tr ' ' '#'
+function print-yellow {
+  YELLOW='\033[0;33m'
+  NC='\033[0m' # No Color
+  printf "${YELLOW}$*${NC}\n"
 }
+
+function print-line {
+  print-yellow "%`tput cols`s"|tr ' ' '#'
+}
+
