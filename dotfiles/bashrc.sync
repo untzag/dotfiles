@@ -17,7 +17,6 @@ function countdown(){
 }
 
 function git-commit-with-timestamp(){
-  echo " "
   pwd
   git remote update
   git pull
@@ -31,6 +30,12 @@ function git-commit-with-timestamp(){
 }
 
 function git-sync-all(){
+  print-line
   cd ~/org; git-commit-with-timestamp;
+  print-line
   cd ~/dotfiles; git-commit-with-timestamp;
+}
+
+function print-line {
+  printColor "%`tput cols`s"|tr ' ' '#'
 }
