@@ -133,6 +133,9 @@
   (setq-default fill-column 99)
   (setq org-tags-column -99)
   (setq org-agenda-window-setup 'current-window)
+  (setq org-agenda-start-day "-1d")
+  (setq org-agenda-span 10)
+  (setq org-agenda-start-on-weekday nil)
   (setq powerline-default-separator nil
         spaceline-org-clock-p t)
   (setq org-ref-default-bibliography '("~/literature/database.bib")
