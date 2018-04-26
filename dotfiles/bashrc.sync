@@ -30,10 +30,13 @@ function git-commit-with-timestamp(){
 }
 
 function git-sync-all(){
-  print-line
-  cd ~/org; git-commit-with-timestamp;
-  print-line
-  cd ~/dotfiles; git-commit-with-timestamp;
+  while read -r line
+  do
+    echo "$line"
+    cd "$line"
+    git-commit-with-timestamp
+  done < ~/.git-synced
+  cd ~
 }
 
 function print-cyan {
