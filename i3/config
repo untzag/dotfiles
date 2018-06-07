@@ -182,17 +182,16 @@ client.urgent           $background $background $red        $red      $red
 client.placeholder      #282a2e     #0c0c0c     #ffffff     #000000   #0c0c0c
 client.background       $background
 
-gaps inner 10
-gaps outer 0
-smart_gaps on
 for_window [class="^.*"] border pixel 5
-hide_edge_borders both
+hide_edge_borders smart
 
 
 # --- software ------------------------------------------------------------------------------------
 
-
-# exec insync start
+exec xrdb ~/.Xresources
+exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
 exec xset s off -dpms 
 exec xset -b  # never beep
