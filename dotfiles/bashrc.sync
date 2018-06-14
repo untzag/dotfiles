@@ -59,3 +59,7 @@ function print-yellow {
   NC='\033[0m' # No Color
   printf "${YELLOW}$*${NC}\n"
 }
+
+function pip3-update-all {
+  pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U
+}
