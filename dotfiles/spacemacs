@@ -7,32 +7,26 @@
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers '(
+                                       bibtex
                                        rust
                                        html
-     yamlauto-completion
-     better-defaults
-     bibtex
-     emacs-lisp
-     games
-     git
-     helm
-     journal
-     latex
-     (latex :variables latex-enable-folding t)
-     markdown
-     org
-     pdf-tools
-     python
-     ranger
-     shell
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom
-            shell-default-shell 'term)
-     spell-checking
-     syntax-checking
-     version-control
-     )
+                                       yamlauto-completion
+                                       better-defaults
+                                       emacs-lisp
+                                       games
+                                       git
+                                       helm
+                                       journal
+                                       latex
+                                       (latex :variables latex-enable-folding t)
+                                       markdown
+                                       org
+                                       python
+                                       ranger
+                                       spell-checking
+                                       syntax-checking
+                                       version-control
+   )
    dotspacemacs-additional-packages '(
      base16-theme
      )
@@ -146,9 +140,11 @@
         org-journal-file-format "%Y-%m-%d.org")
   (setq powerline-default-separator nil
         spaceline-org-clock-p t)
-  (setq org-ref-default-bibliography '("~/literature/database.bib")
+  (setq bibtex-completion-bibliography '("~/literature/database.bib")
+        bibtex-completion-library-path "~/literature/"
+        bibtex-completion-notes-path "~/literature/"
+        org-ref-default-bibliography '("~/literature/database.bib")
         org-ref-pdf-directory '"~/literature/"
-        org-ref-bibliography-notes '"~/literature/literature.org"
         org-ellipsis " ⟶"
         org-todo-keywords '((sequence "TODO(t)" "IDEA(i)" "WAITING(w)" "|" "DONE(d)" "DELEGATED" "CANCELED(c)"))
         org-todo-keyword-faces '(("IDEA" . (:foreground "#2aa198", :weight bold))
@@ -157,6 +153,9 @@
                                  ("DONE" . (:foreground "#859900", :weight bold))
                                  ("DELEGATED" . (:foreground "#859900", :weight bold))
                                  ("CANCELED" . (:foreground "#268bd2", :weight bold))))
+  (setq bibtex-completion-pdf-open-function
+        (lambda (fpath)
+          (call-process "evince" nil 0 nil fpath)))
   (setq org-capture-templates
         '(("t" "Todo" entry (file "~/org/todo.org")
            "* TODO %?\n  %i\n  %a")
