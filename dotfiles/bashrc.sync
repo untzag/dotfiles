@@ -2,13 +2,24 @@ export PS1="\[\033[01;32m\]\u@\h \W \\$ \[$(tput sgr0)\]\[\033[0m\]"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export LEDGER_FILE="~/ledger/main.ledger"
+
+# --- aliases -------------------------------------------------------------------------------------
+
+alias ledger='ledger --date-format "%Y-%m-%d"'
+
+alias ledger-cash='ledger register cash --tail 15'
+
+alias ledger-checking='ledger register checking --tail 15'
+
+alias ledger-worth='ledger bal ^assets ^liabilities'
 
 # --- functions -----------------------------------------------------------------------------------
 
 function countdown(){
   secs=$(($1 * 60));
-  date1=$((`date +%s` + "$secs")); 
-  while [ "$date1" -ge `date +%s` ]; do 
+  date1=$((`date +%s` + "$secs"));
+  while [ "$date1" -ge `date +%s` ]; do
     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
     sleep 0.1
   done
@@ -19,7 +30,7 @@ function git-commit-with-timestamp(){
   git remote update
   git pull
   if ! git diff --quiet
-  then 
+  then
     echo "COMMITING"
     git add --all
     git commit -m "$(date +"%Y-%m-%d %H:%M")"
