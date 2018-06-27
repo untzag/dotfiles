@@ -89,7 +89,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -108,6 +108,10 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+z workspace HOME
+bindsym $mod+c workspace CHAT
+bindsym $mod+x workspace APPS
+bindsym $mod+space workspace PLAY
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -194,7 +198,7 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec --no-startup-id xsetroot -solid "#000000"
 
-exec xset s off -dpms 
+exec xset s off -dpms
 exec xset -b  # never beep
 
 exec-always --no-startup-id dunst -config ~/.dunstrc
