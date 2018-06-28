@@ -16,6 +16,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm
+bindsym $mod+Shift+Return exec qutebrowser
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -48,24 +49,12 @@ bindsym $mod+t exec ~/.config/i3/toggle_mouse.sh
 
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -108,10 +97,9 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+z workspace HOME
-bindsym $mod+c workspace CHAT
-bindsym $mod+x workspace APPS
-bindsym $mod+space workspace PLAY
+bindsym $mod+c workspace C
+bindsym $mod+x workspace X
+bindsym $mod+space workspace ~
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -124,7 +112,6 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -152,6 +139,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Tab workspace back_and_forth
 
 # --- theme ---------------------------------------------------------------------------------------
 
